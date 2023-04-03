@@ -73,3 +73,9 @@ main .features p {
     margin: 2% 20%;
     text-align: left;
 }
+
+form {
+    margin-left: 32%;
+    width: 500px;
+    margin-top: 50px;
+}
