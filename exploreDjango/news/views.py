@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Arctiles
 from .forms import ArticlesForm
-from django.views.generic import DetailView
+from django.views.generic import DetailView, UpdateView, DeleteView
 
 
 # Create your views here.
@@ -14,6 +14,19 @@ class NewsDetailView(DetailView):
     model = Arctiles
     template_name = 'news/details_view.html'
     context_object_name = 'article'
+
+
+class NewsUpdateView(UpdateView):
+    model = Arctiles
+    template_name = 'news/create.html'
+
+    form_class = ArticlesForm
+
+
+class NewsDeleteView(DeleteView):
+    model = Arctiles
+    success_url = '/news/'
+    template_name = 'news/news-delete.html'
 
 
 def create(request):
